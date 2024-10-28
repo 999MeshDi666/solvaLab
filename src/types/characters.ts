@@ -1,3 +1,5 @@
+import { Filter } from "./filter";
+
 type Character = {
   name: string;
   height: string;
@@ -16,7 +18,6 @@ type Character = {
   edited: string;
   url: string;
 };
-export type Characters = {
-  count: number;
-  result: Character[];
+export type Characters = Filter & {
+  results: Character[];
 };

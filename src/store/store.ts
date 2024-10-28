@@ -6,11 +6,17 @@ import {
   TypedUseSelectorHook,
 } from "react-redux";
 import charactersApi from "../services/characters";
+import starshipsApi from "../services/starships";
+import planetsApi from "../services/planets";
 
 const store = configureStore({
   reducer: reducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(charactersApi.middleware),
+    getDefaultMiddleware().concat(
+      charactersApi.middleware,
+      starshipsApi.middleware,
+      planetsApi.middleware
+    ),
 });
 
 export type RootState = ReturnType<typeof reducer>;

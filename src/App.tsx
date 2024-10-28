@@ -3,11 +3,15 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import { useGetCharactersQuery } from "./services/characters";
+import { useGetPlanetsQuery } from "./services/planets";
+import { useGetStarshipsQuery } from "./services/starships";
 
 function App() {
   const [count, setCount] = useState(0);
   const { data: characters } = useGetCharactersQuery();
-  console.log(characters.results);
+  const { data: planets } = useGetPlanetsQuery();
+  const { data: starships } = useGetStarshipsQuery();
+  console.log(characters?.results, planets?.results, starships?.results);
   return (
     <>
       <div>
