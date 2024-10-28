@@ -7,9 +7,9 @@ const charactersApi: any = createApi({
   refetchOnMountOrArgChange: true,
   tagTypes: ["characters"],
   endpoints: (builder) => ({
-    getCharacters: builder.query<Characters, { page: string }>({
-      query: ({ page }) => {
-        return `people/?page=${page}`;
+    getCharacters: builder.query<Characters, Characters>({
+      query: () => {
+        return `people`;
       },
     }),
   }),
